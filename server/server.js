@@ -1,3 +1,4 @@
+
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
@@ -217,10 +218,7 @@ app.post('/api/contact', async (req, res) => {
 
 // 2. CV Download - PDF (Express backend route)
 app.get('/api/download/cv/pdf', (req, res) => {
-  let filePath = path.join(__dirname, 'public', 'Bhavishy_Garg_Resume.pdf');
-  if (!fs.existsSync(filePath)) {
-    filePath = path.join(__dirname, 'public', 'Bhavishy_CV.pdf');
-  }
+  const filePath = path.join(__dirname, 'public', 'Bhavishy_Garg_Resume.pdf');
 
   if (!fs.existsSync(filePath)) {
     return res.status(404).json({ success: false, message: 'CV PDF not found on server.' });
@@ -237,10 +235,7 @@ app.get('/api/download/cv/pdf', (req, res) => {
 
 // 3. CV Download - DOCX (Express backend route)
 app.get('/api/download/cv/docx', (req, res) => {
-  let filePath = path.join(__dirname, 'public', 'Bhavishy_Garg_Resume.docx');
-  if (!fs.existsSync(filePath)) {
-    filePath = path.join(__dirname, 'public', 'Bhavishy_CV.docx');
-  }
+  const filePath = path.join(__dirname, 'public', 'Bhavishy_Garg_Resume.docx');
 
   if (!fs.existsSync(filePath)) {
     return res.status(404).json({
