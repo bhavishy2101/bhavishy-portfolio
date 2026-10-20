@@ -1,14 +1,206 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" prefix="og: https://ogp.me/ns#">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23f5e642' stroke='%23000' stroke-width='10'/><text x='50' y='65' font-size='50' font-family='monospace' font-weight='bold' text-anchor='middle' fill='%23000'>B</text></svg>" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Bhavishy Garg - Full Stack Developer Portfolio. Building digital products with React, Node.js, Express, and MongoDB." />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-    <title>BHAVISHY.exe | Full Stack Developer</title>
+    <title>Bhavishy Garg | Full Stack MERN Developer Portfolio | React, Node, MongoDB</title>
+
+    <!-- Primary Meta Tags -->
+    <meta name="title" content="Bhavishy Garg | Full Stack MERN Developer Portfolio | React, Node, MongoDB" />
+    <meta name="description" content="Official developer portfolio of Bhavishy Garg. Full Stack Developer & CSE student specializing in MERN stack (MongoDB, Express.js, React, Node.js), Python, Machine Learning, and cloud systems based in Jaipur, Rajasthan, India." />
+    <meta name="keywords" content="Bhavishy Garg, Full Stack Developer, MERN Stack Developer, React Developer, Node.js, Express.js, MongoDB Atlas, JavaScript Developer, Python Developer, Portfolio, Software Engineer Jaipur, Web Developer India, ResQCharge, QuickPicks" />
+    <meta name="author" content="Bhavishy Garg" />
+    <meta name="creator" content="Bhavishy Garg" />
+    <meta name="publisher" content="Bhavishy Garg" />
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <link rel="canonical" href="https://bhavishy-portfolio.vercel.app/" />
+
+    <!-- GEO / Geographic Targeting Meta Tags (GEO Optimization for Local & Regional Search) -->
+    <meta name="geo.region" content="IN-RJ" />
+    <meta name="geo.placename" content="Jaipur, Rajasthan, India" />
+    <meta name="geo.position" content="26.9124;75.7873" />
+    <meta name="ICBM" content="26.9124, 75.7873" />
+
+    <!-- Mobile & Theme Controls -->
+    <meta name="theme-color" content="#f5e642" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0a0a0c" media="(prefers-color-scheme: dark)" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <!-- Open Graph / Facebook / LinkedIn (AEO & Social Graph) -->
+    <meta property="og:type" content="profile" />
+    <meta property="og:site_name" content="Bhavishy Garg Portfolio" />
+    <meta property="og:url" content="https://bhavishy-portfolio.vercel.app/" />
+    <meta property="og:title" content="Bhavishy Garg | Full Stack MERN Developer Portfolio" />
+    <meta property="og:description" content="Explore digital products, full stack MERN applications (React, Node, Express, MongoDB), and machine learning projects built by Bhavishy Garg." />
+    <meta property="og:image" content="https://bhavishy-portfolio.vercel.app/bhavishy.jpg" />
+    <meta property="og:image:secure_url" content="https://bhavishy-portfolio.vercel.app/bhavishy.jpg" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Bhavishy Garg - Full Stack MERN Developer" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="profile:first_name" content="Bhavishy" />
+    <meta property="profile:last_name" content="Garg" />
+    <meta property="profile:username" content="bhavishy2101" />
+
+    <!-- Twitter / X Card Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://bhavishy-portfolio.vercel.app/" />
+    <meta name="twitter:title" content="Bhavishy Garg | Full Stack MERN Developer Portfolio" />
+    <meta name="twitter:description" content="Computer Science Engineering student & Full Stack Developer building high-performance web applications with React, Express, Node, and MongoDB." />
+    <meta name="twitter:image" content="https://bhavishy-portfolio.vercel.app/bhavishy.jpg" />
+    <meta name="twitter:image:alt" content="Bhavishy Garg - Full Stack Developer" />
+    <meta name="twitter:creator" content="@bhavishy2101" />
+
+    <!-- Favicon & Icons -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23f5e642' stroke='%23000' stroke-width='10'/><text x='50' y='65' font-size='50' font-family='monospace' font-weight='bold' text-anchor='middle' fill='%23000'>B</text></svg>" />
+
+    <!-- Font & Asset Preconnects for Performance Optimization -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+
+    <!-- Structured Data (JSON-LD) for Google, Bing, and AI Answer Engines (AEO / GEO / Schema.org) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Person",
+          "@id": "https://bhavishy-portfolio.vercel.app/#person",
+          "name": "Bhavishy Garg",
+          "givenName": "Bhavishy",
+          "familyName": "Garg",
+          "alternateName": ["Bhavishy", "bhavishy2101"],
+          "gender": "https://schema.org/Male",
+          "jobTitle": "Full Stack MERN Developer",
+          "url": "https://bhavishy-portfolio.vercel.app/",
+          "image": "https://bhavishy-portfolio.vercel.app/bhavishy.jpg",
+          "description": "Full Stack Developer and Computer Science Engineering student specializing in MERN stack (MongoDB, Express.js, React, Node.js), Python, and Cloud Integrations.",
+          "email": "bhavishy21cse@gmail.com",
+          "sameAs": [
+            "https://github.com/bhavishy2101",
+            "https://www.linkedin.com/in/bhavishy-garg-bb300135a"
+          ],
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Jaipur",
+            "addressRegion": "Rajasthan",
+            "addressCountry": "IN"
+          },
+          "knowsAbout": [
+            "MERN Stack",
+            "React.js",
+            "Node.js",
+            "Express.js",
+            "MongoDB Atlas",
+            "RESTful API Design",
+            "JavaScript",
+            "Python",
+            "Salesforce CRM",
+            "Machine Learning",
+            "Full Stack Web Development"
+          ],
+          "alumniOf": {
+            "@type": "EducationalOrganization",
+            "name": "Computer Science & Engineering"
+          }
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://bhavishy-portfolio.vercel.app/#website",
+          "url": "https://bhavishy-portfolio.vercel.app/",
+          "name": "Bhavishy Garg Portfolio",
+          "description": "Official personal developer portfolio of Bhavishy Garg featuring full-stack projects, experience timeline, skills, and contact form.",
+          "publisher": {
+            "@id": "https://bhavishy-portfolio.vercel.app/#person"
+          },
+          "inLanguage": "en-US"
+        },
+        {
+          "@type": "ProfilePage",
+          "@id": "https://bhavishy-portfolio.vercel.app/#webpage",
+          "url": "https://bhavishy-portfolio.vercel.app/",
+          "name": "Bhavishy Garg | Full Stack MERN Developer Portfolio",
+          "isPartOf": {
+            "@id": "https://bhavishy-portfolio.vercel.app/#website"
+          },
+          "mainEntity": {
+            "@id": "https://bhavishy-portfolio.vercel.app/#person"
+          },
+          "about": {
+            "@id": "https://bhavishy-portfolio.vercel.app/#person"
+          }
+        },
+        {
+          "@type": "ItemList",
+          "@id": "https://bhavishy-portfolio.vercel.app/#projects",
+          "name": "Featured Software Projects by Bhavishy Garg",
+          "itemListElement": [
+            {
+              "@type": "SoftwareApplication",
+              "position": 1,
+              "name": "ResQCharge",
+              "applicationCategory": "WebApplication",
+              "operatingSystem": "All",
+              "description": "Real-time EV charging slot booking and dynamic pricing web application with React, Node.js, MongoDB, and TailwindCSS.",
+              "author": { "@id": "https://bhavishy-portfolio.vercel.app/#person" }
+            },
+            {
+              "@type": "SoftwareApplication",
+              "position": 2,
+              "name": "QuickPicks",
+              "applicationCategory": "WebApplication",
+              "operatingSystem": "All",
+              "description": "Smart vending machine web application with instant QR payments, cart management, and inventory tracking.",
+              "author": { "@id": "https://bhavishy-portfolio.vercel.app/#person" }
+            },
+            {
+              "@type": "SoftwareApplication",
+              "position": 3,
+              "name": "Crop Yield Prediction",
+              "applicationCategory": "MachineLearningModel",
+              "operatingSystem": "All",
+              "description": "Machine learning regression model predicting agricultural yields based on soil and weather parameters with 92% accuracy.",
+              "author": { "@id": "https://bhavishy-portfolio.vercel.app/#person" }
+            },
+            {
+              "@type": "SoftwareApplication",
+              "position": 4,
+              "name": "Salesforce Smart Warranty",
+              "applicationCategory": "CRMApplication",
+              "operatingSystem": "All",
+              "description": "Automated warranty claims handling system on Salesforce Service Cloud with Einstein AI triage.",
+              "author": { "@id": "https://bhavishy-portfolio.vercel.app/#person" }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+
+    <!-- Google Tags / Analytics (gtag.js) Architecture -->
+    <!-- Supports dynamic Google Tag configuration via VITE_GA_ID or window.GA_MEASUREMENT_ID -->
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){ dataLayer.push(arguments); }
+      gtag('js', new Date());
+
+      // If a measurement ID is configured, initialize gtag
+      const gaId = window.GA_MEASUREMENT_ID || (typeof import.meta !== 'undefined' && import.meta.env && import.meta.env.VITE_GA_ID);
+      if (gaId) {
+        const gaScript = document.createElement('script');
+        gaScript.async = true;
+        gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=' + gaId;
+        document.head.appendChild(gaScript);
+        gtag('config', gaId, { page_path: window.location.pathname });
+      }
+    </script>
   </head>
   <body>
     <div id="root"></div>

@@ -1,0 +1,31 @@
+# robots.txt for Bhavishy Garg Portfolio
+# Search Engines, Bing, and AI Crawlers (AEO / GEO)
+
+User-agent: *
+Allow: /
+Disallow: /api/
+
+# Explicit permissions for Major Search & AI Answer Engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+# Sitemap Location
+Sitemap: https://bhavishy-portfolio.vercel.app/sitemap.xml

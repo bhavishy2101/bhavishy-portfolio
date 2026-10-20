@@ -1,0 +1,34 @@
+# Bhavishy Garg - Full Stack MERN Developer
+
+> Developer profile and executive summary for Bhavishy Garg, Computer Science Engineering student and Full Stack Developer specializing in the MERN Stack (MongoDB, Express.js, React, Node.js), Python, and Cloud Integrations based in Jaipur, Rajasthan, India.
+
+## Contact & Profile Information
+- Name: Bhavishy Garg
+- Role: Full Stack Developer / MERN Developer / Software Engineer
+- Location: Jaipur, Rajasthan, India
+- Email: bhavishy21cse@gmail.com
+- LinkedIn: https://www.linkedin.com/in/bhavishy-garg-bb300135a
+- GitHub: https://github.com/bhavishy2101
+- Live Portfolio: https://bhavishy-portfolio.vercel.app
+- Backend API: https://bhavishy-portfolio.onrender.com
+
+## Technical Specializations & Stack
+- Frontend: React.js, JavaScript (ES6+), HTML5, CSS3, Vite, Retro Brutalist UI, Responsive Web Design
+- Backend: Node.js, Express.js, RESTful APIs, CORS, Middleware Architecture, Nodemailer
+- Databases: MongoDB Atlas, Mongoose ODM
+- Languages: JavaScript, Python, C++, SQL
+- Platforms & Tools: Git, GitHub, Render, Vercel, Supabase, Salesforce Service Cloud
+
+## Core Projects
+- ResQCharge: Real-time EV charging slot booking and dynamic pricing web application with React, Node.js, MongoDB, and TailwindCSS.
+- QuickPicks: Smart vending machine web application with instant QR payments, cart management, and inventory tracking.
+- Crop Yield Prediction: Machine learning regression model predicting agricultural yields based on soil and weather parameters (92% accuracy).
+- Salesforce Smart Warranty: Automated warranty claims handling system on Salesforce Service Cloud with Einstein AI triage.
+
+## Verified Certifications & Honors
+- BytePX Software Developer Intern (2025)
+- Salesforce Certified AI Associate
+- Salesforce Trailhead Ranger (100+ Badges)
+- Infosys Springboard Database Management Systems
+- Red Hat Enterprise Linux RH124
+- Smart India Hackathon (SIH) College Finalist

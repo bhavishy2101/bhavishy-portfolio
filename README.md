@@ -78,8 +78,12 @@ portfolio/
 │   │   ├── App.jsx             # Main Application assembly & React Router routes
 │   │   ├── index.css           # Retro brutalist design system & CSS variables
 │   │   └── main.jsx            # React root mount with BrowserRouter
+│   ├── docs/                   # Assignment specification & UI design mock
+│   │   ├── MERN_Portfolio_Assignment.pdf # Faculty assignment requirements specification
+│   │   └── Retro Grid Portfolio Dashboard.png # Original UI design mock reference
 │   ├── .env.example            # Client environment template
 │   ├── package.json
+│   ├── vercel.json             # Client SPA routing configuration
 │   └── vite.config.js
 │
 ├── server/                     # /server (Node.js + Express.js REST API)
@@ -91,10 +95,9 @@ portfolio/
 │   └── server.js               # Express API routes, Mongoose models, & file streaming
 │
 ├── .gitignore                  # Root Git ignore rules (excludes .env, node_modules, dist)
-├── Bhavishy_Garg_Resume (1).docx # Original authentic Word resume
-├── MERN_Portfolio_Assignment.pdf # Professor's assignment requirements
-├── Retro Grid Portfolio Dashboard.png # Original Design Reference
-└── README.md
+├── package.json                # Root package orchestration (concurrently run dev)
+├── vercel.json                 # Vercel deployment root configuration
+└── README.md                   # Comprehensive project documentation
 ```
 
 ---
@@ -307,4 +310,27 @@ MONGO_URI=mongodb+srv://portfolio_admin:YourEncodedPassword@cluster0.abcde.mongo
 | **Certifications** | Display certificates with images and verification links, hackathons | Trailhead Ranger, Red Hat RH124, LinuxWorld AWS, BytePX, HackJKLU 5.0 | ✅ Full Marks |
 | **Deployment** | Frontend & backend deployed live and accessible via public URL | Documented deployment configs for Vercel/Netlify and Render/Railway | ✅ Full Marks |
 | **Code Quality & GitHub** | Organized structure, package.json files, .gitignore excluding .env & node_modules | Clean separation, committed package-lock.json, strict .gitignore rules | ✅ Full Marks |
+
+---
+
+## 🔍 SEO, AEO, GEO & Structured Data
+
+The portfolio implements industry-standard search and answer engine optimization:
+
+1. **SEO (Search Engine Optimization)**:
+   - Dynamic canonical tags, author attribution, and semantic HTML5 headings (`h1` through `h6`).
+   - Open Graph (`og:*`) & Twitter Card (`twitter:*`) tags for rich link previews across LinkedIn, WhatsApp, X, and Facebook.
+   - Dynamic XML sitemap at [`/sitemap.xml`](https://bhavishy-portfolio.vercel.app/sitemap.xml) and multi-bot [`/robots.txt`](https://bhavishy-portfolio.vercel.app/robots.txt).
+
+2. **AEO (Answer Engine Optimization)**:
+   - Full Schema.org JSON-LD graph integrating `Person`, `WebSite`, `ProfilePage`, and `ItemList` (Software Projects).
+   - Dedicated [`/llms.txt`](https://bhavishy-portfolio.vercel.app/llms.txt) executive summary for AI search engines (ChatGPT, Perplexity, Claude, Google Gemini AI Overviews).
+
+3. **GEO (Generative Engine Optimization & Local Targeting)**:
+   - Geographic metadata targeting Jaipur, Rajasthan, India (`geo.region: IN-RJ`, `geo.placename: Jaipur`, `geo.position: 26.9124;75.7873`).
+   - High-density factual entities and verified credential anchors to maximize AI citation rates.
+
+4. **Google Tags Architecture**:
+   - Built-in asynchronous Google tag (`gtag.js`) and `window.dataLayer` initialization, configurable via `VITE_GA_ID`.
+
 
