@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Mail, MapPin, Download, CheckCircle, AlertCircle, FileText } from 'lucide-react';
+import { supabase, isSupabaseConfigured } from '../lib/supabase';
 
 const LinkedinIcon = () => (
   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -37,8 +38,6 @@ export default function Contact() {
     }));
   };
 
-  const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     setStatus({ loading: true, success: null, message: '' });
@@ -66,39 +65,49 @@ export default function Contact() {
       return;
     }
 
-    try {
-      const response = await fetch(`${API_URL}/api/contact`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          name: trimmedName,
-          email: trimmedEmail,
-          subject: trimmedSubject,
-          message: trimmedMessage
-        }),
-      });
-
-      const data = await response.json();
-
-      if (response.ok) {
-        setStatus({
-          loading: false,
-          success: true,
-          message: data.message || 'Thank you! Your message has been received.',
-        });
-        setFormData({ name: '', email: '', subject: '', message: '' });
-      } else {
-        setStatus({
-          loading: false,
-          success: false,
-          message: data.message || 'Something went wrong. Please try again.',
-        });
-      }
-    } catch {
+    if (!isSupabaseConfigured || !supabase) {
       setStatus({
         loading: false,
         success: false,
-        message: 'Could not connect to the backend server. Please verify the server is running.',
+        message: 'Database connection is not configured. Please ensure Supabase environment variables are set.',
+      });
+      return;
+    }
+
+    try {
+      const { error } = await supabase
+        .from('contacts')
+        .insert([
+          {
+            name: trimmedName,
+            email: trimmedEmail,
+            subject: trimmedSubject,
+            message: trimmedMessage,
+          },
+        ]);
+
+      if (error) {
+        console.error('Supabase submission error:', error.message);
+        setStatus({
+          loading: false,
+          success: false,
+          message: error.message || 'Something went wrong. Please try again.',
+        });
+        return;
+      }
+
+      setStatus({
+        loading: false,
+        success: true,
+        message: 'Thank you! Your message has been received.',
+      });
+      setFormData({ name: '', email: '', subject: '', message: '' });
+    } catch (err) {
+      console.error('Submission error:', err);
+      setStatus({
+        loading: false,
+        success: false,
+        message: 'An unexpected error occurred while sending your message. Please try again.',
       });
     }
   };
@@ -267,7 +276,7 @@ export default function Contact() {
 
             <div className="download-btns">
               <a
-                href={`${API_URL}/api/download/cv/pdf`}
+                href="/Bhavishy_Garg_Resume.pdf"
                 download="Bhavishy_Garg_Resume.pdf"
                 className="btn btn-primary"
                 style={{ flex: 1, justifyContent: 'center' }}
@@ -277,7 +286,7 @@ export default function Contact() {
                 <Download size={14} /> DOWNLOAD RESUME (PDF)
               </a>
               <a
-                href={`${API_URL}/api/download/cv/docx`}
+                href="/Bhavishy_Garg_Resume.docx"
                 download="Bhavishy_Garg_Resume.docx"
                 className="btn"
                 style={{ flex: 1, justifyContent: 'center' }}
