@@ -16,6 +16,8 @@ const GithubIcon = () => (
   </svg>
 );
 
+const API_BASE = (import.meta.env.VITE_API_URL || 'http://localhost:5000').replace(/\/+$/, '');
+
 export default function Contact() {
   const [formData, setFormData] = useState({
     name: '',
@@ -63,8 +65,6 @@ export default function Contact() {
       setStatus({ loading: false, success: false, message: 'Please enter a message (at least 5 characters).' });
       return;
     }
-
-    const API_BASE = import.meta.env.VITE_API_URL || 'http://localhost:5000';
 
     try {
       const response = await fetch(`${API_BASE}/api/contact`, {
@@ -266,7 +266,7 @@ export default function Contact() {
 
             <div className="download-btns">
               <a
-                href={`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/download/cv/pdf`}
+                href={`${API_BASE}/api/download/cv/pdf`}
                 download="Bhavishy_Garg_Resume.pdf"
                 className="btn btn-primary"
                 style={{ flex: 1, justifyContent: 'center' }}
@@ -276,7 +276,7 @@ export default function Contact() {
                 <Download size={14} /> DOWNLOAD RESUME (PDF)
               </a>
               <a
-                href={`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/download/cv/docx`}
+                href={`${API_BASE}/api/download/cv/docx`}
                 download="Bhavishy_Garg_Resume.docx"
                 className="btn"
                 style={{ flex: 1, justifyContent: 'center' }}

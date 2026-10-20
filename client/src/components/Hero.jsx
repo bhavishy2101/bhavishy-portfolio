@@ -12,6 +12,8 @@ const techStack = [
 ];
 
 
+const API_BASE = (import.meta.env.VITE_API_URL || 'http://localhost:5000').replace(/\/+$/, '');
+
 export default function Hero() {
   const [roleIdx, setRoleIdx] = useState(0);
   const [displayed, setDisplayed] = useState('');
@@ -74,7 +76,7 @@ export default function Hero() {
               VIEW PROJECTS →
             </a>
             <a
-              href={`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/download/cv/pdf`}
+              href={`${API_BASE}/api/download/cv/pdf`}
               download="Bhavishy_Garg_Resume.pdf"
               className="btn"
               target="_blank"
@@ -84,7 +86,7 @@ export default function Hero() {
               ⬇ CV (PDF)
             </a>
             <a
-              href={`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/download/cv/docx`}
+              href={`${API_BASE}/api/download/cv/docx`}
               download="Bhavishy_Garg_Resume.docx"
               className="btn"
               target="_blank"
