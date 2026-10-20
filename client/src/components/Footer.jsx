@@ -12,7 +12,6 @@ export default function Footer() {
         <strong>BHAVISHY.exe</strong> © 2026 · ALL RIGHTS RESERVED
       </div>
       <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-        <span>DESIGNED WITH RETRO BRUTALISM</span>
         <button
           onClick={scrollToTop}
           className="btn btn-sm"

@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Mail, MapPin, Download, CheckCircle, AlertCircle, FileText } from 'lucide-react';
-import { supabase, isSupabaseConfigured } from '../lib/supabase';
 
 const LinkedinIcon = () => (
   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -65,49 +64,40 @@ export default function Contact() {
       return;
     }
 
-    if (!isSupabaseConfigured || !supabase) {
-      setStatus({
-        loading: false,
-        success: false,
-        message: 'Database connection is not configured. Please ensure Supabase environment variables are set.',
-      });
-      return;
-    }
+    const API_BASE = import.meta.env.VITE_API_URL || 'http://localhost:5000';
 
     try {
-      const { error } = await supabase
-        .from('contacts')
-        .insert([
-          {
-            name: trimmedName,
-            email: trimmedEmail,
-            subject: trimmedSubject,
-            message: trimmedMessage,
-          },
-        ]);
+      const response = await fetch(`${API_BASE}/api/contact`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          name: trimmedName,
+          email: trimmedEmail,
+          subject: trimmedSubject,
+          message: trimmedMessage
+        })
+      });
 
-      if (error) {
-        console.error('Supabase submission error:', error.message);
-        setStatus({
-          loading: false,
-          success: false,
-          message: error.message || 'Something went wrong. Please try again.',
-        });
-        return;
+      const data = await response.json().catch(() => null);
+
+      if (!response.ok) {
+        throw new Error(data?.message || `Server responded with status ${response.status}`);
       }
 
       setStatus({
         loading: false,
         success: true,
-        message: 'Thank you! Your message has been received.',
+        message: data?.message || 'Thank you! Your message has been saved to MongoDB successfully.',
       });
       setFormData({ name: '', email: '', subject: '', message: '' });
     } catch (err) {
-      console.error('Submission error:', err);
+      console.error('Backend submission error:', err);
       setStatus({
         loading: false,
         success: false,
-        message: 'An unexpected error occurred while sending your message. Please try again.',
+        message: err.message || 'Could not connect to backend server. Please verify backend is running on http://localhost:5000.',
       });
     }
   };
@@ -276,7 +266,7 @@ export default function Contact() {
 
             <div className="download-btns">
               <a
-                href="/Bhavishy_Garg_Resume.pdf"
+                href={`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/download/cv/pdf`}
                 download="Bhavishy_Garg_Resume.pdf"
                 className="btn btn-primary"
                 style={{ flex: 1, justifyContent: 'center' }}
@@ -286,10 +276,12 @@ export default function Contact() {
                 <Download size={14} /> DOWNLOAD RESUME (PDF)
               </a>
               <a
-                href="/Bhavishy_Garg_Resume.docx"
+                href={`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/download/cv/docx`}
                 download="Bhavishy_Garg_Resume.docx"
                 className="btn"
                 style={{ flex: 1, justifyContent: 'center' }}
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 <FileText size={14} /> WORD (.DOCX)
               </a>

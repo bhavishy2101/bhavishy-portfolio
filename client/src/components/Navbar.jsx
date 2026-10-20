@@ -61,19 +61,6 @@ export default function Navbar({ theme, toggleTheme }) {
             </a>
           </li>
         ))}
-        <li>
-          <a
-            href="/contact"
-            className="hire-btn"
-            onClick={e => {
-              e.preventDefault();
-              navigate('/contact');
-              scrollTo('contact');
-            }}
-          >
-            HIRE ME
-          </a>
-        </li>
       </ul>
 
       <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>

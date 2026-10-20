@@ -138,7 +138,6 @@ export default function Skills() {
               <div
                 className="skill-item"
                 key={skill.name}
-                onClick={() => setSelectedSkill(skill)}
               >
                 {/* Tooltip */}
                 <div className="skill-tooltip">

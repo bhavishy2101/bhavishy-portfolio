@@ -79,8 +79,19 @@ export default function Hero() {
               className="btn"
               target="_blank"
               rel="noopener noreferrer"
+              title="Download CV in PDF format via Express backend"
             >
-              ⬇ DOWNLOAD RESUME
+              ⬇ CV (PDF)
+            </a>
+            <a
+              href={`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/download/cv/docx`}
+              download="Bhavishy_Garg_Resume.docx"
+              className="btn"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="Download CV in Word (.docx) format via Express backend"
+            >
+              📄 CV (WORD)
             </a>
           </div>
         </div>

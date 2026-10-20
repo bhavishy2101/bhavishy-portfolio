@@ -3,6 +3,18 @@ import { Rocket } from 'lucide-react';
 
 const experiences = [
   {
+    year: '2024 – Present',
+    yearColor: '#f472b6', // pink
+    title: 'B.Tech in Computer Science & Engineering • JK Lakshmipat University',
+    period: '2024 – 2028 (Expected) • Jaipur, Rajasthan',
+    points: [
+      'Degree: Bachelor of Technology (B.Tech) in Computer Science & Engineering.',
+      'Institution: JK Lakshmipat University (JKLU), Jaipur.',
+      'Core Studies: Data Structures, Database Management Systems (DBMS), Operating Systems, Full Stack Web Development.',
+      'Salesforce Trailhead RANGER rank (134 Badges, 75,925 Points, Agentblazer Innovator \'26).',
+    ],
+  },
+  {
     year: '2026',
     yearColor: '#facc15', // yellow
     title: 'Salesforce Developer Intern • BytePX Technologies',
@@ -37,35 +49,13 @@ const experiences = [
   },
   {
     year: '2026',
-    yearColor: '#ef4444', // red
-    title: 'Red Hat System Administration (RH124)',
-    period: 'April 2026 (40 Credit Hours)',
-    points: [
-      'Completed 40 hours of Red Hat Enterprise Linux system administration training.',
-      'Mastered command-line operations, user permissions, and systemd service management.',
-      'Verified digital credential issued by Red Hat on Credly.',
-    ],
-  },
-  {
-    year: '2026',
     yearColor: '#06b6d4', // cyan
-    title: 'Pre Hackathon 2026 • WsCube x HackJKLU',
+    title: 'Pre Hackathon 2026 • WsCube x HackJKLU 5.0',
     period: 'February 2026 (Jaipur)',
     points: [
       'Participated in HackJKLU 5.0 pre-hackathon solving real-world challenges.',
       'Collaborated on rapid prototyping, system ideation, and agile technical delivery.',
       'Gained deep experience in cross-functional team coordination and rapid problem solving.',
-    ],
-  },
-  {
-    year: '2024',
-    yearColor: '#f472b6', // pink
-    title: 'BTech Computer Science & Engineering',
-    period: '2024 – Present',
-    points: [
-      'Salesforce Trailhead RANGER rank (134 Badges, 75,925 Points, Agentblazer Innovator \'26).',
-      'Completed Database Management System certification by Infosys Springboard.',
-      'Specializing in Full Stack Development, Salesforce CRM, Cloud Computing & Applied AI.',
     ],
   },
 ];

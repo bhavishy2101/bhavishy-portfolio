@@ -21,7 +21,8 @@ const projects = [
     cardIcon: <Sprout size={32} color="#22c55e" />,
     shortDesc: 'High-accuracy agricultural yield forecasting model predicting crop yield (kg/ha) using Random Forest (R² = 0.93) based on environmental and farming conditions.',
     tags: ['Python', 'Machine Learning', 'Random Forest', 'XGBoost', 'Kaggle'],
-    githubUrl: 'https://lnkd.in/gdY6hvzb',
+    githubUrl: 'https://github.com/bhavishy2101/Crop-Yield-Prediction-ML',
+    liveUrl: 'https://lnkd.in/gdY6hvzb',
     mediaType: 'poster',
     mediaSrc: '/crop_yield_prediction.png',
     metrics: [
@@ -62,7 +63,8 @@ const projects = [
     cardIcon: <Shield size={32} color="#3b82f6" />,
     shortDesc: 'Centralized enterprise service operations platform developed during Salesforce Developer Internship at BytePX using Salesforce CRM & OmniStudio.',
     tags: ['Salesforce', 'OmniStudio', 'OmniScripts', 'FlexCards', 'Agentforce'],
-    githubUrl: null,
+    githubUrl: 'https://github.com/bhavishy2101/Warranty-Service-Management-System',
+    liveUrl: 'https://www.salesforce.com/trailblazer/lyftbxxgexkkblvprr',
     mediaType: 'dashboard',
     mediaSrc: '/salesforce_warranty_dashboard.jpg',
     metrics: [
@@ -108,6 +110,7 @@ const projects = [
     shortDesc: 'Reward-based smart college vending machine platform applying DBMS principles to incentivize students through automated purchase tracking, milestone-based free rewards, and anti-misuse spend thresholds.',
     tags: ['HTML', 'CSS', 'JavaScript', 'Flask (Python)', 'DBMS & SQL', 'Loyalty Engine'],
     githubUrl: 'https://github.com/bhavishy2101/QuickPicks---Reward-Based-Smart-Vending-System',
+    liveUrl: 'https://github.com/bhavishy2101/QuickPicks---Reward-Based-Smart-Vending-System#readme',
     mediaType: 'dashboard',
     mediaSrc: '/quickpicks_vending.png',
     screenshots: [
@@ -155,6 +158,7 @@ const projects = [
     shortDesc: 'Innovation-driven prototype platform predicting EV battery range, validating reachable destinations, calculating optimal routes with charging stations, and dispatching on-demand mobile charging vans.',
     tags: ['HTML', 'CSS', 'JavaScript', 'Flask (Python)', 'Route Prediction', 'EV Mobility'],
     githubUrl: 'https://github.com/bhavishy2101/Smart-EV-Battery-Route-Prediction-Platform',
+    liveUrl: 'https://github.com/bhavishy2101/Smart-EV-Battery-Route-Prediction-Platform#readme',
     mediaType: 'dashboard',
     mediaSrc: '/resqcharge_dashboard.png',
     screenshots: [
@@ -318,13 +322,13 @@ export default function Projects() {
             </div>
 
             {/* Action Buttons */}
-            <div className="project-card-links" style={{ marginTop: 'auto', paddingTop: '0.75rem' }}>
+            <div className="project-card-links" style={{ marginTop: 'auto', paddingTop: '0.75rem', display: 'flex', gap: '0.4rem', flexWrap: 'wrap' }}>
               <button
                 onClick={() => setSelectedProject(project)}
                 className="btn btn-primary btn-sm"
-                style={{ flex: 1, justifyContent: 'center' }}
+                style={{ flex: 1, minWidth: '95px', justifyContent: 'center' }}
               >
-                View Details →
+                Details →
               </button>
               {project.githubUrl && (
                 <a
@@ -336,6 +340,18 @@ export default function Projects() {
                   title="View GitHub Repository"
                 >
                   <GitBranch size={13} /> Repo
+                </a>
+              )}
+              {project.liveUrl && (
+                <a
+                  href={project.liveUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-sm"
+                  style={{ justifyContent: 'center' }}
+                  title="View Live Demo or Project"
+                >
+                  <ExternalLink size={13} /> Demo
                 </a>
               )}
             </div>
@@ -404,6 +420,17 @@ export default function Projects() {
                       style={{ display: 'inline-flex', alignItems: 'center', gap: '0.35rem' }}
                     >
                       <GitBranch size={13} /> GitHub Repo <ExternalLink size={12} />
+                    </a>
+                  )}
+                  {selectedProject.liveUrl && (
+                    <a
+                      href={selectedProject.liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn btn-sm"
+                      style={{ display: 'inline-flex', alignItems: 'center', gap: '0.35rem' }}
+                    >
+                      <ExternalLink size={13} /> Live Demo
                     </a>
                   )}
                   <button

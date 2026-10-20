@@ -1,11 +1,14 @@
 {
-  "name": "portfolio-backend",
+  "name": "portfolio-server",
   "version": "1.0.0",
   "description": "Bhavishy Garg's Portfolio Backend API",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
     "dev": "nodemon server.js"
+  },
+  "engines": {
+    "node": ">=18.0.0"
   },
   "dependencies": {
     "cors": "^2.8.5",
